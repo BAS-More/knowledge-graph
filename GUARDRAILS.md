@@ -1,6 +1,6 @@
-# Guardrails — GitNexus (repo + agents)
+# Guardrails — Knowledge-Graph (repo + agents)
 
-Rules for **human contributors** and **AI agents** working on this codebase or publishing artifacts. These complement `AGENTS.md` / `CLAUDE.md` (which focus on GitNexus-in-GitNexus workflows).
+Rules for **human contributors** and **AI agents** working on this codebase or publishing artifacts. These complement `AGENTS.md` / `CLAUDE.md` (which focus on Knowledge-Graph-in-Knowledge-Graph workflows).
 
 ## Scope (typical agent session)
 
@@ -18,10 +18,10 @@ Adjust explicitly if the maintainer defines a different scope for a task.
 ## Non-negotiables
 
 1. **Never commit secrets** — API keys, tokens, `.env` with real values, private URLs, or session cookies. Use `.env.example` with placeholders only.  
-2. **Never rename symbols with blind find-and-replace** when working in a GitNexus-indexed project — use the **`rename` MCP tool** with **`dry_run: true` first**, then review `graph` vs `text_search` edits. (There is no separate `gitnexus rename` CLI; renaming goes through MCP or editor integration.)  
+2. **Never rename symbols with blind find-and-replace** when working in a Knowledge-Graph-indexed project — use the **`rename` MCP tool** with **`dry_run: true` first**, then review `graph` vs `text_search` edits. (There is no separate `knowledge-graph rename` CLI; renaming goes through MCP or editor integration.)  
 3. **Run impact analysis before editing shared symbols** — use **`impact`** (upstream) for functions/classes/methods others call; do not ignore **HIGH** / **CRITICAL** risk without maintainer sign-off.  
 4. **Prefer `detect_changes` before commit** — confirm diffs map to expected symbols/processes when the graph is available.  
-5. **Preserve embeddings** — if `.gitnexus/meta.json` shows embeddings, run `npx gitnexus analyze --embeddings` when refreshing the index; plain `analyze` can drop them.
+5. **Preserve embeddings** — if `.knowledge-graph/meta.json` shows embeddings, run `npx knowledge-graph analyze --embeddings` when refreshing the index; plain `analyze` can drop them.
 
 ---
 
@@ -33,20 +33,20 @@ Append new Signs here when the same mistake repeats (e.g. CI broken twice the sa
 ### Sign: Stale graph after edits
 
 - **Trigger:** MCP or resources warn the index is behind `HEAD`, or code search doesn’t match latest commit.  
-- **Instruction:** Run `npx gitnexus analyze` from the repo root (plus `--embeddings` if the project used them).  
+- **Instruction:** Run `npx knowledge-graph analyze` from the repo root (plus `--embeddings` if the project used them).  
 - **Reason:** Tools query LadybugDB built at last analyze; git changes are invisible until re-indexed.
 
 ### Sign: Embeddings vanished after analyze
 
-- **Trigger:** Semantic search quality drops; `stats.embeddings` in `.gitnexus/meta.json` is 0 after a refresh.  
-- **Instruction:** Re-run `npx gitnexus analyze --embeddings` and confirm `meta.json` reflects stored embeddings.  
+- **Trigger:** Semantic search quality drops; `stats.embeddings` in `.knowledge-graph/meta.json` is 0 after a refresh.  
+- **Instruction:** Re-run `npx knowledge-graph analyze --embeddings` and confirm `meta.json` reflects stored embeddings.  
 - **Reason:** Embedding generation is opt-in; analyze without the flag does not preserve prior vectors.
 
 ### Sign: MCP lists no repos
 
 - **Trigger:** MCP stderr says no indexed repos.  
-- **Instruction:** Run `npx gitnexus analyze` in the target repository; verify `npx gitnexus list` shows it.  
-- **Reason:** The MCP server discovers repos via `~/.gitnexus/registry.json`, populated by analyze.
+- **Instruction:** Run `npx knowledge-graph analyze` in the target repository; verify `npx knowledge-graph list` shows it.  
+- **Reason:** The MCP server discovers repos via `~/.knowledge-graph/registry.json`, populated by analyze.
 
 ### Sign: Wrong repo in multi-repo setups
 
@@ -56,7 +56,7 @@ Append new Signs here when the same mistake repeats (e.g. CI broken twice the sa
 
 ### Sign: LadybugDB lock / “database busy”
 
-- **Trigger:** Errors opening `.gitnexus/lbug` while MCP and analyze both run.  
+- **Trigger:** Errors opening `.knowledge-graph/lbug` while MCP and analyze both run.  
 - **Instruction:** Stop overlapping processes; one writer at a time. Retry analyze or restart MCP.  
 - **Reason:** Embedded DB expects single-process ownership of the store.
 

@@ -11,11 +11,11 @@ export default [
       '**/dist/**',
       '**/node_modules/**',
       '**/coverage/**',
-      'gitnexus/vendor/**',
-      'gitnexus-web/src/vendor/**',
-      'gitnexus/test/fixtures/**',
-      'gitnexus-web/playwright-report/**',
-      'gitnexus-web/test-results/**',
+      'knowledge-graph/vendor/**',
+      'knowledge-graph-web/src/vendor/**',
+      'knowledge-graph/test/fixtures/**',
+      'knowledge-graph-web/playwright-report/**',
+      'knowledge-graph-web/test-results/**',
       '**/*.d.ts',
       '.claude/**',
       '.history/**',
@@ -60,15 +60,15 @@ export default [
 
   // CLI package — allow console.log (it's a CLI tool)
   {
-    files: ['gitnexus/src/cli/**/*.ts', 'gitnexus/src/server/**/*.ts'],
+    files: ['knowledge-graph/src/cli/**/*.ts', 'knowledge-graph/src/server/**/*.ts'],
     rules: {
       'no-console': 'off',
     },
   },
 
-  // React-specific rules for gitnexus-web
+  // React-specific rules for knowledge-graph-web
   {
-    files: ['gitnexus-web/src/**/*.{ts,tsx}'],
+    files: ['knowledge-graph-web/src/**/*.{ts,tsx}'],
     plugins: {
       'react-hooks': reactHooks,
     },

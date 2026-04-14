@@ -1,5 +1,5 @@
 {
-  "name": "gitnexus-monorepo",
+  "name": "knowledge-graph-monorepo",
   "private": true,
   "scripts": {
     "prepare": "husky",

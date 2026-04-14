@@ -17,7 +17,7 @@ jobs:
         with:
           filters: |
             web:
-              - 'gitnexus-web/**'
+              - 'knowledge-graph-web/**'
 
   e2e:
     name: e2e (chromium)
@@ -28,47 +28,47 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: ./.github/actions/setup-gitnexus-web
+      - uses: ./.github/actions/setup-knowledge-graph-web
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
       - name: Install backend dependencies
         run: npm ci
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Build backend
         run: npm run build
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Analyze repository (index for backend)
         run: |
-          node gitnexus/dist/cli/index.js analyze || true
-          if [ ! -d ".gitnexus" ]; then
-            echo "::error::No .gitnexus index created"
+          node knowledge-graph/dist/cli/index.js analyze || true
+          if [ ! -d ".knowledge-graph" ]; then
+            echo "::error::No .knowledge-graph index created"
             exit 1
           fi
 
       - name: Start backend server
         run: node dist/cli/index.js serve &
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Wait for backend readiness
         run: npx wait-on http://localhost:4747/api/repos --timeout 30000
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
       - name: Start Vite dev server
         run: npm run dev &
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
       - name: Wait for Vite dev server
         run: npx wait-on http://localhost:5173 --timeout 30000
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
       - name: Run E2E tests
         run: npx playwright test
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
         env:
           E2E: '1'
 
@@ -78,6 +78,6 @@ jobs:
         with:
           name: e2e-results
           path: |
-            gitnexus-web/test-results/
-            gitnexus-web/playwright-report/
+            knowledge-graph-web/test-results/
+            knowledge-graph-web/playwright-report/
           retention-days: 5

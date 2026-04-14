@@ -1,0 +1,3 @@
+{
+  "installCommand": "cd ../knowledge-graph-shared && npm install && npm run build && cd ../knowledge-graph-web && npm install"
+}

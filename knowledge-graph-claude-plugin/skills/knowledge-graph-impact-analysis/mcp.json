@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "knowledge-graph": {
+      "command": "npx",
+      "args": ["-y", "knowledge-graph@latest", "mcp"]
+    }
+  }
+}

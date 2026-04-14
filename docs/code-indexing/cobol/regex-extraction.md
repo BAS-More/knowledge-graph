@@ -203,4 +203,4 @@ HIGH-VALUES, HIGH-VALUE, QUOTES, QUOTE, ALL
 
 ## Source Files
 
-- `gitnexus/src/core/ingestion/cobol-preprocessor.ts` -- `preprocessCobolSource()`, `extractCobolSymbolsWithRegex()`, all regex constants
+- `knowledge-graph/src/core/ingestion/cobol-preprocessor.ts` -- `preprocessCobolSource()`, `extractCobolSymbolsWithRegex()`, all regex constants

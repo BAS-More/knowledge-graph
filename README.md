@@ -1,10 +1,10 @@
-# GitNexus
-⚠️ Important Notice:** GitNexus has NO official cryptocurrency, token, or coin. Any token/coin using the GitNexus name on Pump.fun or any other platform is **not affiliated with, endorsed by, or created by** this project or its maintainers. Do not purchase any cryptocurrency claiming association with GitNexus.
+# Knowledge-Graph
+⚠️ Important Notice:** Knowledge-Graph has NO official cryptocurrency, token, or coin. Any token/coin using the Knowledge-Graph name on Pump.fun or any other platform is **not affiliated with, endorsed by, or created by** this project or its maintainers. Do not purchase any cryptocurrency claiming association with Knowledge-Graph.
 
 <div align="center">
 
   <a href="https://trendshift.io/repositories/19809" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/19809" alt="abhigyanpatwari%2FGitNexus | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+    <img src="https://trendshift.io/api/badge/repositories/19809" alt="abhigyanpatwari%2FKnowledge-Graph | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
   </a>
 
   <h2>Join the official Discord to discuss ideas, issues etc!</h2>
@@ -12,8 +12,8 @@
   <a href="https://discord.gg/AAsRVT6fGb">
     <img src="https://img.shields.io/discord/1477255801545429032?color=5865F2&logo=discord&logoColor=white" alt="Discord"/>
   </a>
-  <a href="https://www.npmjs.com/package/gitnexus">
-    <img src="https://img.shields.io/npm/v/gitnexus.svg" alt="npm version"/>
+  <a href="https://www.npmjs.com/package/knowledge-graph">
+    <img src="https://img.shields.io/npm/v/knowledge-graph.svg" alt="npm version"/>
   </a>
   <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/">
     <img src="https://img.shields.io/badge/License-PolyForm%20Noncommercial-blue.svg" alt="License: PolyForm Noncommercial"/>
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/172685ba-8e54-4ea7-9ad1-e31a3398da72
 
 
 
-> *Like DeepWiki, but deeper.* DeepWiki helps you *understand* code. GitNexus lets you *analyze* it — because a knowledge graph tracks every relationship, not just descriptions.
+> *Like DeepWiki, but deeper.* DeepWiki helps you *understand* code. Knowledge-Graph lets you *analyze* it — because a knowledge graph tracks every relationship, not just descriptions.
 
 **TL;DR:** The **Web UI** is a quick way to chat with any repo. The **CLI + MCP** is how you make your AI agent actually reliable — it gives Cursor, Claude Code, Codex, and friends a deep architectural view of your codebase so they stop missing dependencies, breaking call chains, and shipping blind edits. Even smaller models get full architectural clarity, making it compete with goliath models.
 
@@ -42,28 +42,28 @@ https://github.com/user-attachments/assets/172685ba-8e54-4ea7-9ad1-e31a3398da72
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=abhigyanpatwari/GitNexus&type=date&legend=top-left)](https://www.star-history.com/#abhigyanpatwari/GitNexus&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=BAS-More/knowledge-graph&type=date&legend=top-left)](https://www.star-history.com/#BAS-More/knowledge-graph&type=date&legend=top-left)
 
 
-## Two Ways to Use GitNexus
+## Two Ways to Use Knowledge-Graph
 
 |                   | **CLI + MCP**                                            | **Web UI**                                             |
 | ----------------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
 | **What**    | Index repos locally, connect AI agents via MCP                 | Visual graph explorer + AI chat in browser                   |
 | **For**     | Daily development with Cursor, Claude Code, Codex, Windsurf, OpenCode | Quick exploration, demos, one-off analysis                   |
 | **Scale**   | Full repos, any size                                           | Limited by browser memory (~5k files), or unlimited via backend mode |
-| **Install** | `npm install -g gitnexus`                                    | No install — [gitnexus.vercel.app](https://gitnexus.vercel.app) |
+| **Install** | `npm install -g knowledge-graph`                                    | No install — [knowledge-graph.vercel.app](https://knowledge-graph.vercel.app) |
 | **Storage** | LadybugDB native (fast, persistent)                               | LadybugDB WASM (in-memory, per session)                         |
 | **Parsing** | Tree-sitter native bindings                                    | Tree-sitter WASM                                             |
 | **Privacy** | Everything local, no network                                   | Everything in-browser, no server                             |
 
-> **Bridge mode:** `gitnexus serve` connects the two — the web UI auto-detects the local server and can browse all your CLI-indexed repos without re-uploading or re-indexing.
+> **Bridge mode:** `knowledge-graph serve` connects the two — the web UI auto-detects the local server and can browse all your CLI-indexed repos without re-uploading or re-indexing.
 
 ---
 
 ## Enterprise
 
-GitNexus is available as an **enterprise offering** - either as a fully managed **SaaS** or a **self-hosted** deployment. Also available for **commercial use** of the OSS version with proper licensing.
+Knowledge-Graph is available as an **enterprise offering** - either as a fully managed **SaaS** or a **self-hosted** deployment. Also available for **commercial use** of the OSS version with proper licensing.
 
 Enterprise includes:
 - **PR Review** - automated blast radius analysis on pull requests
@@ -89,7 +89,7 @@ Enterprise includes:
 - [RUNBOOK.md](RUNBOOK.md) — analyze, embeddings, stale index, MCP recovery, CI snippets
 - [GUARDRAILS.md](GUARDRAILS.md) — safety rules and operational “Signs” for contributors and agents
 - [CONTRIBUTING.md](CONTRIBUTING.md) — license, setup, commits, and pull requests
-- [TESTING.md](TESTING.md) — test commands for `gitnexus` and `gitnexus-web`
+- [TESTING.md](TESTING.md) — test commands for `knowledge-graph` and `knowledge-graph-web`
 
 ## CLI + MCP (recommended)
 
@@ -99,16 +99,16 @@ The CLI indexes your repository and runs an MCP server that gives AI agents deep
 
 ```bash
 # Index your repo (run from repo root)
-npx gitnexus analyze
+npx knowledge-graph analyze
 ```
 
 That's it. This indexes the codebase, installs agent skills, registers Claude Code hooks, and creates `AGENTS.md` / `CLAUDE.md` context files — all in one command.
 
-To configure MCP for your editor, run `npx gitnexus setup` once — or set it up manually below.
+To configure MCP for your editor, run `npx knowledge-graph setup` once — or set it up manually below.
 
 ### MCP Setup
 
-`gitnexus setup` auto-detects your editors and writes the correct global MCP config. You only need to run it once.
+`knowledge-graph setup` auto-detects your editors and writes the correct global MCP config. You only need to run it once.
 
 ### Editor Support
 
@@ -128,10 +128,10 @@ Built by the community — not officially maintained, but worth checking out.
 
 | Project | Author | Description |
 |---------|--------|-------------|
-| [pi-gitnexus](https://github.com/tintinweb/pi-gitnexus) | [@tintinweb](https://github.com/tintinweb) | GitNexus plugin for [pi](https://pi.dev) — `pi install npm:pi-gitnexus` |
-| [gitnexus-stable-ops](https://github.com/ShunsukeHayashi/gitnexus-stable-ops) | [@ShunsukeHayashi](https://github.com/ShunsukeHayashi) | Stable ops & deployment workflows (Miyabi ecosystem) |
+| [pi-knowledge-graph](https://github.com/tintinweb/pi-knowledge-graph) | [@tintinweb](https://github.com/tintinweb) | Knowledge-Graph plugin for [pi](https://pi.dev) — `pi install npm:pi-knowledge-graph` |
+| [knowledge-graph-stable-ops](https://github.com/ShunsukeHayashi/knowledge-graph-stable-ops) | [@ShunsukeHayashi](https://github.com/ShunsukeHayashi) | Stable ops & deployment workflows (Miyabi ecosystem) |
 
-> Have a project built on GitNexus? Open a PR to add it here!
+> Have a project built on Knowledge-Graph? Open a PR to add it here!
 
 If you prefer manual configuration:
 
@@ -139,16 +139,16 @@ If you prefer manual configuration:
 
 ```bash
 # macOS / Linux
-claude mcp add gitnexus -- npx -y gitnexus@latest mcp
+claude mcp add knowledge-graph -- npx -y knowledge-graph@latest mcp
 
 # Windows
-claude mcp add gitnexus -- cmd /c npx -y gitnexus@latest mcp
+claude mcp add knowledge-graph -- cmd /c npx -y knowledge-graph@latest mcp
 ```
 
 **Codex** (full support — MCP + skills):
 
 ```bash
-codex mcp add gitnexus -- npx -y gitnexus@latest mcp
+codex mcp add knowledge-graph -- npx -y knowledge-graph@latest mcp
 ```
 
 **Cursor** (`~/.cursor/mcp.json` — global, works for all projects):
@@ -156,9 +156,9 @@ codex mcp add gitnexus -- npx -y gitnexus@latest mcp
 ```json
 {
   "mcpServers": {
-    "gitnexus": {
+    "knowledge-graph": {
       "command": "npx",
-      "args": ["-y", "gitnexus@latest", "mcp"]
+      "args": ["-y", "knowledge-graph@latest", "mcp"]
     }
   }
 }
@@ -169,9 +169,9 @@ codex mcp add gitnexus -- npx -y gitnexus@latest mcp
 ```json
 {
   "mcp": {
-    "gitnexus": {
+    "knowledge-graph": {
       "type": "local",
-      "command": ["gitnexus", "mcp"]
+      "command": ["knowledge-graph", "mcp"]
     }
   }
 }
@@ -180,41 +180,41 @@ codex mcp add gitnexus -- npx -y gitnexus@latest mcp
 **Codex** (`~/.codex/config.toml` for system scope, or `.codex/config.toml` for project scope):
 
 ```toml
-[mcp_servers.gitnexus]
+[mcp_servers.knowledge-graph]
 command = "npx"
-args = ["-y", "gitnexus@latest", "mcp"]
+args = ["-y", "knowledge-graph@latest", "mcp"]
 ```
 
 ### CLI Commands
 
 ```bash
-gitnexus setup                   # Configure MCP for your editors (one-time)
-gitnexus analyze [path]          # Index a repository (or update stale index)
-gitnexus analyze --force         # Force full re-index
-gitnexus analyze --skills        # Generate repo-specific skill files from detected communities
-gitnexus analyze --skip-embeddings  # Skip embedding generation (faster)
-gitnexus analyze --skip-agents-md  # Preserve custom AGENTS.md/CLAUDE.md gitnexus section edits
-gitnexus analyze --embeddings    # Enable embedding generation (slower, better search)
-gitnexus analyze --verbose       # Log skipped files when parsers are unavailable
-gitnexus mcp                     # Start MCP server (stdio) — serves all indexed repos
-gitnexus serve                   # Start local HTTP server (multi-repo) for web UI connection
-gitnexus list                    # List all indexed repositories
-gitnexus status                  # Show index status for current repo
-gitnexus clean                   # Delete index for current repo
-gitnexus clean --all --force     # Delete all indexes
-gitnexus wiki [path]             # Generate repository wiki from knowledge graph
-gitnexus wiki --model <model>    # Wiki with custom LLM model (default: gpt-4o-mini)
-gitnexus wiki --base-url <url>   # Wiki with custom LLM API base URL
+knowledge-graph setup                   # Configure MCP for your editors (one-time)
+knowledge-graph analyze [path]          # Index a repository (or update stale index)
+knowledge-graph analyze --force         # Force full re-index
+knowledge-graph analyze --skills        # Generate repo-specific skill files from detected communities
+knowledge-graph analyze --skip-embeddings  # Skip embedding generation (faster)
+knowledge-graph analyze --skip-agents-md  # Preserve custom AGENTS.md/CLAUDE.md knowledge-graph section edits
+knowledge-graph analyze --embeddings    # Enable embedding generation (slower, better search)
+knowledge-graph analyze --verbose       # Log skipped files when parsers are unavailable
+knowledge-graph mcp                     # Start MCP server (stdio) — serves all indexed repos
+knowledge-graph serve                   # Start local HTTP server (multi-repo) for web UI connection
+knowledge-graph list                    # List all indexed repositories
+knowledge-graph status                  # Show index status for current repo
+knowledge-graph clean                   # Delete index for current repo
+knowledge-graph clean --all --force     # Delete all indexes
+knowledge-graph wiki [path]             # Generate repository wiki from knowledge graph
+knowledge-graph wiki --model <model>    # Wiki with custom LLM model (default: gpt-4o-mini)
+knowledge-graph wiki --base-url <url>   # Wiki with custom LLM API base URL
 
 # Repository groups (multi-repo / monorepo service tracking)
-gitnexus group create <name>     # Create a repository group
-gitnexus group add <name> <repo> # Add a repo to a group
-gitnexus group remove <name> <repo> # Remove a repo from a group
-gitnexus group list [name]       # List groups, or show one group's config
-gitnexus group sync <name>       # Extract contracts and match across repos/services
-gitnexus group contracts <name>  # Inspect extracted contracts and cross-links
-gitnexus group query <name> <q>  # Search execution flows across all repos in a group
-gitnexus group status <name>     # Check staleness of repos in a group
+knowledge-graph group create <name>     # Create a repository group
+knowledge-graph group add <name> <repo> # Add a repo to a group
+knowledge-graph group remove <name> <repo> # Remove a repo from a group
+knowledge-graph group list [name]       # List groups, or show one group's config
+knowledge-graph group sync <name>       # Extract contracts and match across repos/services
+knowledge-graph group contracts <name>  # Inspect extracted contracts and cross-links
+knowledge-graph group query <name> <q>  # Search execution flows across all repos in a group
+knowledge-graph group status <name>     # Check staleness of repos in a group
 ```
 
 ### What Your AI Agent Gets
@@ -242,13 +242,13 @@ gitnexus group status <name>     # Check staleness of repos in a group
 
 | Resource                                  | Purpose                                              |
 | ----------------------------------------- | ---------------------------------------------------- |
-| `gitnexus://repos`                      | List all indexed repositories (read this first)      |
-| `gitnexus://repo/{name}/context`        | Codebase stats, staleness check, and available tools |
-| `gitnexus://repo/{name}/clusters`       | All functional clusters with cohesion scores         |
-| `gitnexus://repo/{name}/cluster/{name}` | Cluster members and details                          |
-| `gitnexus://repo/{name}/processes`      | All execution flows                                  |
-| `gitnexus://repo/{name}/process/{name}` | Full process trace with steps                        |
-| `gitnexus://repo/{name}/schema`         | Graph schema for Cypher queries                      |
+| `knowledge-graph://repos`                      | List all indexed repositories (read this first)      |
+| `knowledge-graph://repo/{name}/context`        | Codebase stats, staleness check, and available tools |
+| `knowledge-graph://repo/{name}/clusters`       | All functional clusters with cohesion scores         |
+| `knowledge-graph://repo/{name}/cluster/{name}` | Cluster members and details                          |
+| `knowledge-graph://repo/{name}/processes`      | All execution flows                                  |
+| `knowledge-graph://repo/{name}/process/{name}` | Full process trace with steps                        |
+| `knowledge-graph://repo/{name}/schema`         | Graph schema for Cypher queries                      |
 
 **2 MCP prompts** for guided workflows:
 
@@ -266,30 +266,30 @@ gitnexus group status <name>     # Check staleness of repos in a group
 
 **Repo-specific skills** generated with `--skills`:
 
-When you run `gitnexus analyze --skills`, GitNexus detects the functional areas of your codebase (via Leiden community detection) and generates a `SKILL.md` file for each one under `.claude/skills/generated/`. Each skill describes a module's key files, entry points, execution flows, and cross-area connections — so your AI agent gets targeted context for the exact area of code you're working in. Skills are regenerated on each `--skills` run to stay current with the codebase.
+When you run `knowledge-graph analyze --skills`, Knowledge-Graph detects the functional areas of your codebase (via Leiden community detection) and generates a `SKILL.md` file for each one under `.claude/skills/generated/`. Each skill describes a module's key files, entry points, execution flows, and cross-area connections — so your AI agent gets targeted context for the exact area of code you're working in. Skills are regenerated on each `--skills` run to stay current with the codebase.
 
 ---
 
 ## Multi-Repo MCP Architecture
 
-GitNexus uses a **global registry** so one MCP server can serve multiple indexed repos. No per-project MCP config needed — set it up once and it works everywhere.
+Knowledge-Graph uses a **global registry** so one MCP server can serve multiple indexed repos. No per-project MCP config needed — set it up once and it works everywhere.
 
 ```mermaid
 flowchart TD
     subgraph CLI [CLI Commands]
-        Setup["gitnexus setup"]
-        Analyze["gitnexus analyze"]
-        Clean["gitnexus clean"]
-        List["gitnexus list"]
+        Setup["knowledge-graph setup"]
+        Analyze["knowledge-graph analyze"]
+        Clean["knowledge-graph clean"]
+        List["knowledge-graph list"]
     end
 
-    subgraph Registry ["~/.gitnexus/"]
+    subgraph Registry ["~/.knowledge-graph/"]
         RegFile["registry.json"]
     end
 
     subgraph Repos [Project Repos]
-        RepoA[".gitnexus/ in repo A"]
-        RepoB[".gitnexus/ in repo B"]
+        RepoA[".knowledge-graph/ in repo A"]
+        RepoB[".knowledge-graph/ in repo B"]
     end
 
     subgraph MCP [MCP Server]
@@ -314,7 +314,7 @@ flowchart TD
     ConnB -->|"queries"| RepoB
 ```
 
-**How it works:** Each `gitnexus analyze` stores the index in `.gitnexus/` inside the repo (portable, gitignored) and registers a pointer in `~/.gitnexus/registry.json`. When an AI agent starts, the MCP server reads the registry and can serve any indexed repo. LadybugDB connections are opened lazily on first query and evicted after 5 minutes of inactivity (max 5 concurrent). If only one repo is indexed, the `repo` parameter is optional on all tools — agents don't need to change anything.
+**How it works:** Each `knowledge-graph analyze` stores the index in `.knowledge-graph/` inside the repo (portable, gitignored) and registers a pointer in `~/.knowledge-graph/registry.json`. When an AI agent starts, the MCP server reads the registry and can serve any indexed repo. LadybugDB connections are opened lazily on first query and evicted after 5 minutes of inactivity (max 5 concurrent). If only one repo is indexed, the `repo` parameter is optional on all tools — agents don't need to change anything.
 
 ---
 
@@ -322,26 +322,26 @@ flowchart TD
 
 A fully client-side graph explorer and AI chat. No server, no install — your code never leaves the browser.
 
-**Try it now:** [gitnexus.vercel.app](https://gitnexus.vercel.app) — drag & drop a ZIP and start exploring.
+**Try it now:** [knowledge-graph.vercel.app](https://knowledge-graph.vercel.app) — drag & drop a ZIP and start exploring.
 
-<img width="2550" height="1343" alt="gitnexus_img" src="https://github.com/user-attachments/assets/cc5d637d-e0e5-48e6-93ff-5bcfdb929285" />
+<img width="2550" height="1343" alt="knowledge-graph_img" src="https://github.com/user-attachments/assets/cc5d637d-e0e5-48e6-93ff-5bcfdb929285" />
 
 Or run locally:
 
 ```bash
-git clone https://github.com/abhigyanpatwari/gitnexus.git
-cd gitnexus/gitnexus-shared && npm install && npm run build
-cd ../gitnexus-web && npm install
+git clone https://github.com/abhigyanpatwari/knowledge-graph.git
+cd knowledge-graph/knowledge-graph-shared && npm install && npm run build
+cd ../knowledge-graph-web && npm install
 npm run dev
 ```
 
 The web UI uses the same indexing pipeline as the CLI but runs entirely in WebAssembly (Tree-sitter WASM, LadybugDB WASM, in-browser embeddings). It's great for quick exploration but limited by browser memory for larger repos.
 
-**Local Backend Mode:** Run `gitnexus serve` and open the web UI locally — it auto-detects the server and shows all your indexed repos, with full AI chat support. No need to re-upload or re-index. The agent's tools (Cypher queries, search, code navigation) route through the backend HTTP API automatically.
+**Local Backend Mode:** Run `knowledge-graph serve` and open the web UI locally — it auto-detects the server and shows all your indexed repos, with full AI chat support. No need to re-upload or re-index. The agent's tools (Cypher queries, search, code navigation) route through the backend HTTP API automatically.
 
 ---
 
-## The Problem GitNexus Solves
+## The Problem Knowledge-Graph Solves
 
 Tools like **Cursor**, **Claude Code**, **Codex**, **Cline**, **Roo Code**, and **Windsurf** are powerful — but they don't truly know your codebase structure.
 
@@ -351,9 +351,9 @@ Tools like **Cursor**, **Claude Code**, **Codex**, **Cline**, **Roo Code**, and 
 2. Doesn't know 47 functions depend on its return type
 3. **Breaking changes ship**
 
-### Traditional Graph RAG vs GitNexus
+### Traditional Graph RAG vs Knowledge-Graph
 
-Traditional approaches give the LLM raw graph edges and hope it explores enough. GitNexus **precomputes structure at index time** — clustering, tracing, scoring — so tools return complete context in one call:
+Traditional approaches give the LLM raw graph edges and hope it explores enough. Knowledge-Graph **precomputes structure at index time** — clustering, tracing, scoring — so tools return complete context in one call:
 
 ```mermaid
 flowchart TB
@@ -368,7 +368,7 @@ flowchart TB
         Q4 --> OUT1["Answer after 4+ queries"]
     end
 
-    subgraph GN["GitNexus Smart Tools"]
+    subgraph GN["Knowledge-Graph Smart Tools"]
         direction TB
         U2["User: What depends on UserService?"]
         U2 --> TOOL["impact UserService upstream"]
@@ -388,7 +388,7 @@ flowchart TB
 
 ## How It Works
 
-GitNexus builds a complete knowledge graph of your codebase through a multi-phase indexing pipeline:
+Knowledge-Graph builds a complete knowledge graph of your codebase through a multi-phase indexing pipeline:
 
 1. **Structure** — Walks the file tree and maps folder/file relationships
 2. **Parsing** — Extracts functions, classes, methods, and interfaces using Tree-sitter ASTs
@@ -535,14 +535,14 @@ Generate LLM-powered documentation from your knowledge graph:
 
 ```bash
 # Requires an LLM API key (OPENAI_API_KEY, etc.)
-gitnexus wiki
+knowledge-graph wiki
 
 # Use a custom model or provider
-gitnexus wiki --model gpt-4o
-gitnexus wiki --base-url https://api.anthropic.com/v1
+knowledge-graph wiki --model gpt-4o
+knowledge-graph wiki --base-url https://api.anthropic.com/v1
 
 # Force full regeneration
-gitnexus wiki --force
+knowledge-graph wiki --force
 ```
 
 The wiki generator reads the indexed graph structure, groups files into modules via LLM, generates per-module documentation pages, and creates an overview page — all with cross-references to the knowledge graph.
@@ -587,7 +587,7 @@ The wiki generator reads the indexed graph structure, groups files into modules 
 
 ## Security & Privacy
 
-- **CLI**: Everything runs locally on your machine. No network calls. Index stored in `.gitnexus/` (gitignored). Global registry at `~/.gitnexus/` stores only paths and metadata.
+- **CLI**: Everything runs locally on your machine. No network calls. Index stored in `.knowledge-graph/` (gitignored). Global registry at `~/.knowledge-graph/` stores only paths and metadata.
 - **Web**: Everything runs in your browser. No code uploaded to any server. API keys stored in localStorage only.
 - Open source — audit the code yourself.
 

@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-      - uses: ./.github/actions/setup-gitnexus
+      - uses: ./.github/actions/setup-knowledge-graph
         with:
           build: 'true'
 
@@ -26,20 +26,20 @@ jobs:
           --coverage.reporter=text
           --coverage.thresholdAutoUpdate=false
           --coverage.reportOnFailure=true
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
-      # gitnexus-shared already built by setup-gitnexus action above
-      - name: Install gitnexus-web dependencies
+      # knowledge-graph-shared already built by setup-knowledge-graph action above
+      - name: Install knowledge-graph-web dependencies
         run: npm ci
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
-      - name: Run gitnexus-web unit tests
+      - name: Run knowledge-graph-web unit tests
         run: >-
           npx vitest run
           --reporter=default
           --reporter=json
           --outputFile=web-test-results.json
-        working-directory: gitnexus-web
+        working-directory: knowledge-graph-web
 
       - name: Upload test reports
         if: always()
@@ -47,10 +47,10 @@ jobs:
         with:
           name: test-reports
           path: |
-            gitnexus/coverage/coverage-summary.json
-            gitnexus/coverage/coverage-final.json
-            gitnexus/test-results.json
-            gitnexus-web/web-test-results.json
+            knowledge-graph/coverage/coverage-summary.json
+            knowledge-graph/coverage/coverage-final.json
+            knowledge-graph/test-results.json
+            knowledge-graph-web/web-test-results.json
           retention-days: 5
 
   cross-platform:
@@ -64,8 +64,8 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-      - uses: ./.github/actions/setup-gitnexus
+      - uses: ./.github/actions/setup-knowledge-graph
         with:
           build: 'true'
       - run: npx vitest run
-        working-directory: gitnexus
+        working-directory: knowledge-graph

@@ -1,4 +1,4 @@
-# Contributing to GitNexus
+# Contributing to Knowledge-Graph
 
 How to propose changes, run checks locally, and open pull requests.
 
@@ -8,14 +8,14 @@ This project uses the [PolyForm Noncommercial License 1.0.0](https://polyformpro
 
 ## Where to discuss
 
-- **Issues & feature ideas:** use [GitHub Issues](https://github.com/abhigyanpatwari/GitNexus/issues) for the upstream repo, or your fork’s tracker if you work from a fork.
+- **Issues & feature ideas:** use [GitHub Issues](https://github.com/BAS-More/knowledge-graph/issues) for the upstream repo, or your fork’s tracker if you work from a fork.
 - **Community:** see the Discord link in the root [README.md](README.md).
 
 ## Development setup
 
 1. Clone the repository.
-2. **CLI / MCP package:** `cd gitnexus && npm install && npm run build`
-3. **Web UI (if needed):** `cd gitnexus-web && npm install`
+2. **CLI / MCP package:** `cd knowledge-graph && npm install && npm run build`
+3. **Web UI (if needed):** `cd knowledge-graph-web && npm install`
 4. Run tests as described in [TESTING.md](TESTING.md).
 
 ## Branch and pull requests
@@ -35,8 +35,8 @@ This project uses the [PolyForm Noncommercial License 1.0.0](https://polyformpro
 
 ## Before you open a PR
 
-- [ ] Tests pass for the packages you touched (`gitnexus` and/or `gitnexus-web`).
-- [ ] Typecheck passes: `npx tsc --noEmit` in `gitnexus/` and `npx tsc -b --noEmit` in `gitnexus-web/`.
+- [ ] Tests pass for the packages you touched (`knowledge-graph` and/or `knowledge-graph-web`).
+- [ ] Typecheck passes: `npx tsc --noEmit` in `knowledge-graph/` and `npx tsc -b --noEmit` in `knowledge-graph-web/`.
 - [ ] No secrets, tokens, or machine-specific paths committed.
 - [ ] Documentation updated if behavior or public CLI/MCP contract changes.
 - [ ] Pre-commit hook runs clean (`.husky/pre-commit` — typecheck + unit tests for staged packages).

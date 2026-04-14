@@ -1,7 +1,7 @@
-# Baseline mode — no GitNexus, pure mini-swe-agent (control group)
+# Baseline mode — no Knowledge-Graph, pure mini-swe-agent (control group)
 agent:
-  agent_class: 'eval.agents.gitnexus_agent.GitNexusAgent'
-  gitnexus_mode: 'baseline'
+  agent_class: 'eval.agents.knowledge-graph_agent.Knowledge-GraphAgent'
+  knowledge-graph_mode: 'baseline'
   step_limit: 30
   cost_limit: 3.0
 

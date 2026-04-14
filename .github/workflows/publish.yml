@@ -29,13 +29,13 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
           cache: npm
-          cache-dependency-path: gitnexus/package-lock.json
-      - name: Build gitnexus-shared
+          cache-dependency-path: knowledge-graph/package-lock.json
+      - name: Build knowledge-graph-shared
         run: npm install && npm run build
-        working-directory: gitnexus-shared
+        working-directory: knowledge-graph-shared
 
       - run: npm ci
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Verify version consistency
         shell: bash
@@ -51,19 +51,19 @@ jobs:
             exit 1
           fi
           echo "Version verified: $PKG_VERSION"
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Build
         run: npm run build
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Dry-run publish
         run: npm publish --dry-run
-        working-directory: gitnexus
+        working-directory: knowledge-graph
 
       - name: Publish to npm
         run: npm publish --provenance --access public
-        working-directory: gitnexus
+        working-directory: knowledge-graph
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -72,7 +72,7 @@ jobs:
         shell: bash
         run: |
           VERSION="${GITHUB_REF#refs/tags/v}"
-          NOTES=$(awk "/^## \\[$VERSION\\]/{found=1; next} /^## \\[/{if(found) exit} found" gitnexus/CHANGELOG.md)
+          NOTES=$(awk "/^## \\[$VERSION\\]/{found=1; next} /^## \\[/{if(found) exit} found" knowledge-graph/CHANGELOG.md)
           if [ -z "$NOTES" ]; then
             echo "::warning::No CHANGELOG entry found for v$VERSION, falling back to auto-generated notes"
             echo "fallback=true" >> "$GITHUB_OUTPUT"

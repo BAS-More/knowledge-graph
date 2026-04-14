@@ -10,8 +10,8 @@
 
 <!-- Check all that apply -->
 
-- [ ] `gitnexus/` (CLI / core / MCP server)
-- [ ] `gitnexus-web/` (Vite / React UI)
+- [ ] `knowledge-graph/` (CLI / core / MCP server)
+- [ ] `knowledge-graph-web/` (Vite / React UI)
 - [ ] `.github/` (workflows, actions)
 - [ ] `eval/` or other tooling
 - [ ] Docs / agent config only (`AGENTS.md`, `CLAUDE.md`, `.cursor/`, `llms.txt`, etc.)
@@ -34,16 +34,16 @@
 
 <!-- What you ran; paste commands. Omit sections that do not apply. -->
 
-- [ ] `cd gitnexus && npm test`
-- [ ] `cd gitnexus && npm run test:integration` *(if core/indexing/MCP paths changed)*
-- [ ] `cd gitnexus && npx tsc --noEmit`
-- [ ] `cd gitnexus-web && npm test` *(if web changed)*
-- [ ] `cd gitnexus-web && npx tsc -b --noEmit` *(if web changed)*
-- [ ] Manual / Playwright E2E *(note environment — see `gitnexus-web/e2e/`)*
+- [ ] `cd knowledge-graph && npm test`
+- [ ] `cd knowledge-graph && npm run test:integration` *(if core/indexing/MCP paths changed)*
+- [ ] `cd knowledge-graph && npx tsc --noEmit`
+- [ ] `cd knowledge-graph-web && npm test` *(if web changed)*
+- [ ] `cd knowledge-graph-web && npx tsc -b --noEmit` *(if web changed)*
+- [ ] Manual / Playwright E2E *(note environment — see `knowledge-graph-web/e2e/`)*
 
 ## Risk & rollout
 
-<!-- Breaking changes, migrations, index refresh (`npx gitnexus analyze`), release notes -->
+<!-- Breaking changes, migrations, index refresh (`npx knowledge-graph analyze`), release notes -->
 
 ## Checklist
 
