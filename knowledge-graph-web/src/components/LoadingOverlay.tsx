@@ -1,4 +1,4 @@
-import type { PipelineProgress } from 'gitnexus-shared';
+import type { PipelineProgress } from 'knowledge-graph-shared';
 
 interface LoadingOverlayProps {
   progress: PipelineProgress;

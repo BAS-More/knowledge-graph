@@ -21,7 +21,7 @@ import {
   type JobProgress,
 } from '../services/backend-client';
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { GraphNode } from 'gitnexus-shared';
+import { GraphNode } from 'knowledge-graph-shared';
 import { EmbeddingStatus } from './EmbeddingStatus';
 import { RepoAnalyzer } from './RepoAnalyzer';
 
