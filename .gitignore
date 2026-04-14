@@ -44,7 +44,7 @@ HANDOFF*.md
 
 
 .env*.local
-.gitnexus
+.knowledge-graph
 .claude/settings.local.json
 
 # Claude Code worktrees
@@ -60,24 +60,27 @@ assets/
 repomix-output*
 
 # Playwright artifacts
-gitnexus-web/playwright-report/
-gitnexus-web/test-results/
+knowledge-graph-web/playwright-report/
+knowledge-graph-web/test-results/
 
 # Python test artifacts
 eval/.coverage
 eval/.hypothesis/
 
+# Knowledge-graph eval debug
+eval/KNOWLEDGE_GRAPH_EVAL_DEBUG
+
 # Design docs (local only)
 docs/plans/
 
-gitnexus/test/fixtures/mini-repo/*.md
-gitnexus/test/fixtures/mini-repo/.claude
-gitnexus/test/fixtures/mini-repo/.gitignore
+knowledge-graph/test/fixtures/mini-repo/*.md
+knowledge-graph/test/fixtures/mini-repo/.claude
+knowledge-graph/test/fixtures/mini-repo/.gitignore
 
 # Ignore csharp generated obj and bin folders
-gitnexus/test/fixtures/lang-resolution/**/obj
-gitnexus/test/fixtures/lang-resolution/**/bin
-GitNexus.sln
+knowledge-graph/test/fixtures/lang-resolution/**/obj
+knowledge-graph/test/fixtures/lang-resolution/**/bin
+KnowledgeGraph.sln
 # Git worktrees
 .worktrees/
 
@@ -89,7 +92,7 @@ GitNexus.sln
 .claude/commands/
 .claude/helpers
 .claude/skills/
-!.claude/skills/gitnexus/
+!.claude/skills/knowledge-graph/
 
 .history/
 
