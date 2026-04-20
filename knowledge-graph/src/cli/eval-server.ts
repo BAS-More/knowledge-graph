@@ -332,7 +332,9 @@ export async function evalServerCommand(options?: EvalServerOptions): Promise<vo
   const ok = await backend.init();
 
   if (!ok) {
-    console.error('Knowledge-Graph eval-server: No indexed repositories found. Run: knowledge-graph analyze');
+    console.error(
+      'Knowledge-Graph eval-server: No indexed repositories found. Run: knowledge-graph analyze',
+    );
     process.exit(1);
   }
 

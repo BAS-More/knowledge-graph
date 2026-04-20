@@ -37,5 +37,7 @@ export const statusCommand = async () => {
   console.log(`Indexed: ${new Date(repo.meta.indexedAt).toLocaleString()}`);
   console.log(`Indexed commit: ${repo.meta.lastCommit?.slice(0, 7)}`);
   console.log(`Current commit: ${currentCommit?.slice(0, 7)}`);
-  console.log(`Status: ${isUpToDate ? '✅ up-to-date' : '⚠️ stale (re-run knowledge-graph analyze)'}`);
+  console.log(
+    `Status: ${isUpToDate ? '✅ up-to-date' : '⚠️ stale (re-run knowledge-graph analyze)'}`,
+  );
 };
