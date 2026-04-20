@@ -59,7 +59,9 @@ export const indexCommand = async (inputPathParts?: string[], options?: IndexOpt
   if (!options?.allowNonGit && !isGitRepo(repoPath)) {
     console.log(`  Not a git repository: ${repoPath}`);
     console.log('  Initialize one with `git init` or choose a valid repo path.\n');
-    console.log('  Or use --allow-non-git to register an existing .knowledge-graph index anyway.\n');
+    console.log(
+      '  Or use --allow-non-git to register an existing .knowledge-graph index anyway.\n',
+    );
     process.exitCode = 1;
     return;
   }

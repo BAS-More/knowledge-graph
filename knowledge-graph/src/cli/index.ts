@@ -12,7 +12,10 @@ const _require = createRequire(import.meta.url);
 const pkg = _require('../../package.json');
 const program = new Command();
 
-program.name('knowledge-graph').description('Knowledge-Graph local CLI and MCP server').version(pkg.version);
+program
+  .name('knowledge-graph')
+  .description('Knowledge-Graph local CLI and MCP server')
+  .version(pkg.version);
 
 program
   .command('setup')
@@ -25,7 +28,10 @@ program
   .option('-f, --force', 'Force full re-index even if up to date')
   .option('--embeddings', 'Enable embedding generation for semantic search (off by default)')
   .option('--skills', 'Generate repo-specific skill files from detected communities')
-  .option('--skip-agents-md', 'Skip updating the knowledge-graph section in AGENTS.md and CLAUDE.md')
+  .option(
+    '--skip-agents-md',
+    'Skip updating the knowledge-graph section in AGENTS.md and CLAUDE.md',
+  )
   .option('--no-stats', 'Omit volatile file/symbol counts from AGENTS.md and CLAUDE.md')
   .option('--skip-git', 'Index a folder without requiring a .git directory')
   .option('-v, --verbose', 'Enable verbose ingestion warnings (default: false)')
@@ -83,7 +89,10 @@ program
     '--base-url <url>',
     'LLM API base URL. Azure v1: https://{resource}.openai.azure.com/openai/v1',
   )
-  .option('--api-key <key>', 'LLM API key or Azure api-key (saved to ~/.knowledge-graph/config.json)')
+  .option(
+    '--api-key <key>',
+    'LLM API key or Azure api-key (saved to ~/.knowledge-graph/config.json)',
+  )
   .option(
     '--api-version <version>',
     'Azure api-version query param, e.g. 2024-10-21 (legacy Azure API only)',

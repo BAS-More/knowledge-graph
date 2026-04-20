@@ -15,7 +15,8 @@ export function registerGroupCommands(program: Command): void {
     .description('Create a new group with template group.yaml')
     .option('--force', 'Overwrite existing group')
     .action(async (name: string, opts: { force?: boolean }) => {
-      const { createGroupDir, getDefaultKnowledgeGraphDir } = await import('../core/group/storage.js');
+      const { createGroupDir, getDefaultKnowledgeGraphDir } =
+        await import('../core/group/storage.js');
       const dir = await createGroupDir(getDefaultKnowledgeGraphDir(), name, opts.force);
       console.log(`Created group "${name}" at ${dir}`);
       console.log('Edit group.yaml to add repos, then run: knowledge-graph group sync ' + name);

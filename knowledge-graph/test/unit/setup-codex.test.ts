@@ -63,7 +63,18 @@ describe('setupCommand codex execution', () => {
 
     expect(execFileMock).toHaveBeenCalledWith(
       'codex',
-      ['mcp', 'add', 'knowledge-graph', '--', 'cmd', '/c', 'npx', '-y', 'knowledge-graph@latest', 'mcp'],
+      [
+        'mcp',
+        'add',
+        'knowledge-graph',
+        '--',
+        'cmd',
+        '/c',
+        'npx',
+        '-y',
+        'knowledge-graph@latest',
+        'mcp',
+      ],
       { shell: true },
       expect.any(Function),
     );

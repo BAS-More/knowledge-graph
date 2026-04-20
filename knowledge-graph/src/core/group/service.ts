@@ -5,7 +5,12 @@
 
 import { checkStaleness } from '../git-staleness.js';
 import { loadGroupConfig } from './config-parser.js';
-import { getDefaultKnowledgeGraphDir, getGroupDir, listGroups, readContractRegistry } from './storage.js';
+import {
+  getDefaultKnowledgeGraphDir,
+  getGroupDir,
+  listGroups,
+  readContractRegistry,
+} from './storage.js';
 import { syncGroup } from './sync.js';
 
 export interface GroupRepoHandle {

@@ -248,7 +248,12 @@ async function installClaudeCodeHooks(result: SetupResult): Promise<void> {
       }
     }
 
-    ensureHookEntry('PreToolUse', 'Grep|Glob|Bash', 10, 'Enriching with Knowledge-Graph graph context...');
+    ensureHookEntry(
+      'PreToolUse',
+      'Grep|Glob|Bash',
+      10,
+      'Enriching with Knowledge-Graph graph context...',
+    );
     ensureHookEntry('PostToolUse', 'Bash', 10, 'Checking Knowledge-Graph index freshness...');
 
     await writeJsonFile(settingsPath, existing);
@@ -319,9 +324,13 @@ async function setupCodex(result: SetupResult): Promise<void> {
 
   try {
     const entry = getMcpEntry();
-    await execFileAsync('codex', ['mcp', 'add', 'knowledge-graph', '--', entry.command, ...entry.args], {
-      shell: process.platform === 'win32',
-    });
+    await execFileAsync(
+      'codex',
+      ['mcp', 'add', 'knowledge-graph', '--', entry.command, ...entry.args],
+      {
+        shell: process.platform === 'win32',
+      },
+    );
     result.configured.push('Codex');
     return;
   } catch {

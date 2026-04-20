@@ -28,7 +28,9 @@ describe('normalizeServerUrl', () => {
   });
 
   it('preserves existing https://', () => {
-    expect(normalizeServerUrl('https://knowledge-graph.example.com')).toBe('https://knowledge-graph.example.com');
+    expect(normalizeServerUrl('https://knowledge-graph.example.com')).toBe(
+      'https://knowledge-graph.example.com',
+    );
   });
 });
 
