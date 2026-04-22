@@ -2,6 +2,12 @@ name: E2E Tests
 
 on:
   workflow_call:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch or ref to run e2e against'
+        required: false
+        default: ''
 
 jobs:
   check-changes:
@@ -22,7 +28,13 @@ jobs:
   e2e:
     name: e2e (chromium)
     needs: check-changes
-    if: needs.check-changes.result == 'success' && needs.check-changes.outputs.web_changed == 'true'
+    # Runs when (a) paths-filter detected web changes, OR (b) the workflow was
+    # manually dispatched from the Actions UI — useful for smoke-testing a PR
+    # whose diff doesn't touch knowledge-graph-web/** but may still affect the
+    # web runtime via lockfile / shared deps.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (needs.check-changes.result == 'success' && needs.check-changes.outputs.web_changed == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
