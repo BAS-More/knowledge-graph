@@ -33,7 +33,9 @@ const readConfig = (): HttpConfig | null => {
   if (rawDims !== undefined) {
     const parsed = parseInt(rawDims, 10);
     if (Number.isNaN(parsed) || parsed <= 0) {
-      throw new Error(`KNOWLEDGE_GRAPH_EMBEDDING_DIMS must be a positive integer, got "${rawDims}"`);
+      throw new Error(
+        `KNOWLEDGE_GRAPH_EMBEDDING_DIMS must be a positive integer, got "${rawDims}"`,
+      );
     }
     dimensions = parsed;
   }

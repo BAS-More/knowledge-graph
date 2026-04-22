@@ -10,7 +10,9 @@ const knowledgeGraphPkg = _require('../knowledge-graph/package.json');
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   define: {
-    __REQUIRED_NODE_VERSION__: JSON.stringify(knowledgeGraphPkg.engines.node.replace(/[>=^~\s]/g, '')),
+    __REQUIRED_NODE_VERSION__: JSON.stringify(
+      knowledgeGraphPkg.engines.node.replace(/[>=^~\s]/g, ''),
+    ),
   },
   resolve: {
     alias: {

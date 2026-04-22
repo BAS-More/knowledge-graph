@@ -351,7 +351,9 @@ export const loadIgnoreRules = async (
 
   // Allow users to bypass .gitignore parsing (e.g. when .gitignore accidentally excludes source files)
   const skipGitignore = options?.noGitignore ?? !!process.env.KNOWLEDGE_GRAPH_NO_GITIGNORE;
-  const filenames = skipGitignore ? ['.knowledge-graphignore'] : ['.gitignore', '.knowledge-graphignore'];
+  const filenames = skipGitignore
+    ? ['.knowledge-graphignore']
+    : ['.gitignore', '.knowledge-graphignore'];
 
   for (const filename of filenames) {
     try {

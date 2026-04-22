@@ -764,7 +764,10 @@ export class LocalBackend {
     try {
       bm25Results = await searchFTSFromLbug(query, limit, repo.id);
     } catch (err: any) {
-      console.error('Knowledge-Graph: BM25/FTS search failed (FTS indexes may not exist) -', err.message);
+      console.error(
+        'Knowledge-Graph: BM25/FTS search failed (FTS indexes may not exist) -',
+        err.message,
+      );
       return { results: [], ftsUsed: false };
     }
 

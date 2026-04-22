@@ -649,7 +649,9 @@ const renderSkillMarkdown = (
         : community.label;
   lines.push('## How to Explore');
   lines.push('');
-  lines.push(`1. \`knowledge-graph_context({name: "${firstEntry}"})\` \u2014 see callers and callees`);
+  lines.push(
+    `1. \`knowledge-graph_context({name: "${firstEntry}"})\` \u2014 see callers and callees`,
+  );
   lines.push(
     `2. \`knowledge-graph_query({query: "${community.label.toLowerCase()}"})\` \u2014 find related execution flows`,
   );

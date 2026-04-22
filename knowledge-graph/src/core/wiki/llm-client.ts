@@ -63,7 +63,9 @@ export async function resolveLLMConfig(overrides?: Partial<LLMConfig>): Promise<
     temperature: overrides?.temperature ?? 0,
     provider: overrides?.provider ?? savedConfig.provider ?? 'openai',
     apiVersion:
-      overrides?.apiVersion || process.env.KNOWLEDGE_GRAPH_AZURE_API_VERSION || savedConfig.apiVersion,
+      overrides?.apiVersion ||
+      process.env.KNOWLEDGE_GRAPH_AZURE_API_VERSION ||
+      savedConfig.apiVersion,
     isReasoningModel: overrides?.isReasoningModel ?? savedConfig.isReasoningModel,
   };
 }

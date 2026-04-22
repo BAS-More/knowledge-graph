@@ -17,7 +17,9 @@ export interface TestDBHandle {
  * Create a temporary directory for LadybugDB tests.
  * Returns the path and a cleanup function.
  */
-export async function createTempDir(prefix: string = 'knowledge-graph-test-'): Promise<TestDBHandle> {
+export async function createTempDir(
+  prefix: string = 'knowledge-graph-test-',
+): Promise<TestDBHandle> {
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), prefix));
   return {
     dbPath: tmpDir,
